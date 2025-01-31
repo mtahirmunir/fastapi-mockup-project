@@ -1,5 +1,9 @@
 from pymongo import MongoClient
+from dotenv import load_dotenv
+import os
 
-MONGO_URI='mongodb+srv://master:MU9YR6lRFZyo8307@cluster0.fzt6u.mongodb.net/'
+# Load environment variables from .env file
+load_dotenv()
+MONGO_URI = os.getenv("MONGO_URI")
 
 conn = MongoClient(MONGO_URI)
